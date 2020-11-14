@@ -1,0 +1,31 @@
+{
+  "name": "acronym-g2i",
+  "version": "1.0.0",
+  "description": "G2i NodeJS Test",
+  "scripts": {
+    "start": "NODE_ENV=development nodemon ./server/app.js",
+    "test": "NODE_ENV=test npm run pre-migrate && sequelize db:migrate --env test && NODE_ENV=test mocha --exit",
+    "pre-migrate": "node pre-migrate.js",
+    "migrate": "NODE_ENV=$1 npm run pre-migrate && sequelize db:migrate --env $1",
+    "undo_migrate": "sequelize db:migrate:undo --env $1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "debug": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mocha": "^8.2.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.6",
+    "passport": "^0.4.1",
+    "passport-http-bearer": "^1.0.1",
+    "path": "^0.12.7",
+    "sequelize": "^6.3.5",
+    "sequelize-cli": "^6.2.0",
+    "should": "^13.2.3",
+    "supertest": "^6.0.1",
+    "winston": "^3.3.3"
+  }
+}
