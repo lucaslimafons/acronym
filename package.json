@@ -2,12 +2,14 @@
   "name": "acronym-g2i",
   "version": "1.0.0",
   "description": "G2i NodeJS Test",
+  "author": "Lucas Lima Fonseca",
   "scripts": {
     "start": "NODE_ENV=development nodemon ./server/app.js",
-    "test": "NODE_ENV=test npm run pre-migrate && sequelize db:migrate --env test && NODE_ENV=test mocha --exit",
+    "test": "NODE_ENV=test npm run pre-migrate && sequelize db:migrate --env test && sequelize db:seed:all --env test && NODE_ENV=test mocha --exit",
     "pre-migrate": "node pre-migrate.js",
     "migrate": "NODE_ENV=$1 npm run pre-migrate && sequelize db:migrate --env $1",
-    "undo_migrate": "sequelize db:migrate:undo --env $1"
+    "undo_migrate": "sequelize db:migrate:undo --env $1",
+    "seeder": "NODE_ENV=$1 npm run pre-migrate && sequelize db:seed:all --env $1"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -16,6 +18,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mocha": "^8.2.1",
+    "moment": "^2.29.1",
     "morgan": "^1.10.0",
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.6",

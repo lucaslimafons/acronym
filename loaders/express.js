@@ -3,6 +3,7 @@ const cors = require('./cors');
 const logger = require('morgan');
 const compression = require('compression');
 const passport = require('passport');
+const routes = require ('../routes');
 
 module.exports = ({ app }) => {
   app.use(compression());
@@ -12,4 +13,5 @@ module.exports = ({ app }) => {
   app.use(cors());
   app.use(passport.initialize())
   app.use(passport.session())
+  app.use('/', routes);
 }

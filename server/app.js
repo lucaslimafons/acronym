@@ -46,3 +46,7 @@ function onListening() {
     : 'port ' + addr.port;
   winston.info('Listening on ' + bind);
 }
+
+if (process.env.NODE_ENV == 'test') {
+  module.exports = server;
+}
