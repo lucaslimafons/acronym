@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "7441f389-50e7-40d7-b11b-4a6855f1b1d3",
+		"name": "G2i",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET /acronym?from=50&limit=10&search=:search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/acronym?from=0&limit=10&search=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"acronym"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "search",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /acronym/:acronym",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/acronym/bjs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"acronym",
+						"bjs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /acronym/random/:count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/acronym/random/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"acronym",
+						"random",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /acronym",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"abbreviation\": \"bjs\",\n    \"text\": \"beijos\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/acronym",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"acronym"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /acronym/:id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer g2i",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"abbreviation\": \"bjs\",\n    \"text\": \"beijos123\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/acronym/1542",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"acronym",
+						"1542"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /acronym/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer g2i",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/acronym/1542",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"acronym",
+						"1542"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
