@@ -34,12 +34,12 @@ $ npm run seeder development
 
 (Please take a look on config/database.js file.)
 
-8. Run the project
+4. Run the project
 ```
 $ npm start
 ```
 
-9. Test command
+5. Test command
 ```
 $ npm run test
 ```
